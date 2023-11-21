@@ -8,7 +8,7 @@
   <body>
     <div id="app">
       <h2>Lista Mail</h2>
-      <ul>
+      <ul v-if="mailsArray.length == 10">
         <li v-for="value in mailsArray">{{ value }}</li>
       </ul>
     </div>
