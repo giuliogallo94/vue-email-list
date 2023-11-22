@@ -3,7 +3,6 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
-      rndMail: "",
       mailsArray: [],
     };
   },
@@ -12,24 +11,12 @@ const app = createApp({
       axios
         .get("https://flynn.boolean.careers/exercises/api/random/mail")
         .then((resp) => {
-          console.log(resp.data.response);
-          this.rndMail = resp.data.response;
-          this.mailsArray.push(this.rndMail);
-          console.log(this.mailsArray);
+          this.mailsArray.push(resp.data.response);
         });
     }
   },
 
-  methods: {
-    // generateMail: function () {
-    //   axios
-    //     .get("https://flynn.boolean.careers/exercises/api/random/mail")
-    //     .then((resp) => {
-    //       console.log(resp.data.response);
-    //       this.rndMail = resp.data.response;
-    //     });
-    // },
-  },
+  methods: {},
 });
 
 app.mount("#app");
